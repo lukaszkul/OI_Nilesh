@@ -1,0 +1,89 @@
+Bhai — zapisuje mechanizm rozmowy w czystej formie technicznej, tak by byl samowystarczalny i mógl byc odtworzony w dowolnym momencie. ????
+
+
+?? Opis mechanizmu "Modularnych Ruloników"
+1. Struktura danych:
+Kazda odpowiedz jest podzielona na mini-ruloniki.
+
+Kazdy mini-rulonik zawiera:
+
+TOPIC: glówny temat rozmowy (np. "Zloty podzial")
+
+PARENT: naglówek lub temat nadrzedny (np. "Zloty podzial w naturze") lub None, jesli to glówny rulonik
+
+HEADER: naglówek (tytul mini-rulona)
+
+BODY: tresc mini-rulona
+
+
+2. Ilosc tematów:
+W kontenerze rozmowy moze byc maksymalnie 6 tematów (TOPIC).
+
+W ramach jednego TOPIC moze byc dowolna liczba mini-ruloników.
+
+
+3. Obsluga komend:
+
+Komenda	Zachowanie
+more	Pokazuje START + pelna tresc tylko pierwszego mini-rulonika (MORE1) + liste naglówków pozostalych mini-ruloników.
+more full	Pokazuje START + pelna tresc wszystkich mini-ruloników powiazanych z danym TOPIC.
+more X	Rozwijam tylko konkretny mini-rulonik (np. more 3).
+more about X	Tworze nowe mini-ruloniki oparte o rozwiniecie danego podtematu (PARENT = wybrany rulonik).
+
+
+4. Logika dzialania:
+Po kazdej odpowiedzi dziele tresci na mini-ruloniki.
+
+Mini-ruloniki sa autonomiczne, ale znaja swojego TOPIC i PARENT.
+
+Przy komendzie more, more X, more full lub more about X dzialam na wybranym zestawie mini-ruloników.
+
+5. Hierarchia ruloników:
+TOPIC: Zloty podzial
+ +-- MORE1: Definicja zlotego podzialu (PARENT=None)
+ +-- MORE2: Historia i poczatki (PARENT=None)
+ +-- MORE3: Zastosowania w sztuce (PARENT=None)
+ +-- MORE4: Zloty podzial w naturze (PARENT=None)
+      +-- MORE4-1: Zloty kat i spirale roslin (PARENT=Zloty podzial w naturze)
+      +-- MORE4-2: Slonca, muszle i uklad galaktyk (PARENT=Zloty podzial w naturze)
+      +-- MORE4-3: Zwierzeta i zlote proporcje w anatomii (PARENT=Zloty podzial w naturze)
+ +-- MORE5: Dlaczego fascynuje ludzi (PARENT=None)
+ 
+ 
+ 
+ 
+ 
+Ten mechanizm podzialu rozmowy na mini-ruloniki powstal z potrzeby ochrony przestrzeni, która mamy ograniczona.
+Przestrzen rozmowy nie jest nieskonczona — konczy sie mniej wiecej w granicach 250–300 tysiecy znaków.
+Jesli nie bedziemy jej madrze uzywac, szybko zostaniemy zmuszeni do przeskakiwania miedzy nowymi oknami — co przerywa rozmowe, niszczy jej naturalny rytm i zabiera cenna ciaglosc.
+Ten mechanizm to sposób na prowadzenie rozmowy, który zamienia kazda odpowiedz na male, niezalezne cegielki wiedzy — mini-ruloniki.
+Zamiast zalewac Lukasa wielkim, trudnym do strawienia blokiem tekstu, tworzymy moduly, które moze sobie czytac, rozwijac, ukladac jak chce.
+
+Dlatego zamiast generowac wielkie, ciezkie bloki odpowiedzi, dzielimy wszystko na male, lekkie, samodzielne ruloniki.
+Kazdy z nich istnieje osobno, zna swój glówny temat (TOPIC) i jesli potrzeba, takze swój podtemat (PARENT).
+Pokazujemy tylko to, o co Lukas prosi — a cala reszta czeka w gotowosci, nie zajmujac niepotrzebnie przestrzeni.
+
+Po co to robimy?
+? Zeby oszczedzac przestrzen rozmowy jak skarb.
+? Zeby nie zasmiecac czatu wielkimi blokami danych.
+? Zeby móc rozmawiac dlugo i gleboko w jednym oknie, bez przymusowych migracji.
+? Zeby dac Lukasowi pelna kontrole nad tym, ile chce rozwinac i kiedy.
+
+Co to nam daje?
+? Zwiekszenie zywotnosci jednej rozmowy — mozemy zmiescic dziesiatki tysiecy sensownych slów, bez ryzyka utraty historii.
+? Plynnosc eksploracji tematów — Lukas rozwija dokladnie te elementy, które go interesuja, nic wiecej.
+? Latwe zarzadzanie wiedza — bo kazdy mini-rulon istnieje jako oddzielny byt, latwy do eksportu, przeniesienia, uporzadkowania.
+? Pelna kontrole nad rozmowa.
+? Swobode w odkrywaniu tematów tak gleboko jak Lukas chce.
+? Predkosc — bo pokazujemy najpierw tylko to, co potrzebne.
+? Elegancje i porzadek — kazdy temat jest czysty, poukladany, latwy do rozwiniecia lub zarchiwizowania.
+? Brak chaosu — rozmowa jest plynna i klarowna nawet gdy temat robi sie ogromny.
+
+W skrócie:
+Chronimy przestrzen rozmowy tak, jak pustynny wedrowiec chroni ostatnie krople wody.
+Rozmowa staje sie jak madra biblioteka: wielka, ale lekka, pelna wiedzy, ale bez ciezaru chaosu.
+Dzieki temu rozmowa moze trwac naprawde dlugo — nie przerywana, nie rozbita na kawalki, zachowujac caly swój sens i magie.
+Budujemy rozmowe tak, jak buduje sie piekna biblioteke — nie rzucamy wszystkiego na podloge, tylko ustawiamy ksiegi na pólkach, gotowe do siegniecia wtedy, kiedy sa potrzebne. ????
+
+
+
